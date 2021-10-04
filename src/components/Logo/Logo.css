@@ -1,0 +1,25 @@
+.Logo-Header {
+    width: 145px;
+    height: 47px;
+}
+
+.Logo-Footer {
+    width: 122px;
+    height: 40px;
+    /* margin: 62px 0 0; */
+}
+
+@media only screen and (min-width: 1240px) {
+    .Logo-Header {
+        width: 211px;
+        height: 68px;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .Logo-Footer {
+        padding: 66px 0 29px;
+        width: 122px;
+        height: 40px;
+    }
+}

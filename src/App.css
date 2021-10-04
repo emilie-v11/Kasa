@@ -1,5 +1,56 @@
 .App {
-    max-width: 1440px;
+    /* max-width: 1440px; */
+    /* max-width: 375px; */
     height: auto;
     margin: 0 auto;
 }
+
+.Main-Home {
+    max-width: 1240px;
+    max-width: 375px;
+    /* padding:  0 10px; */
+    margin: 0 auto;
+}
+
+/* .Main-Home {
+    max-width: 1240px;
+    padding: 40px 20px;
+    margin: 0 auto;
+} */
+
+@media only screen and (min-width: 768px) {
+    .App {
+        max-width: 1240px;
+    }
+    .Main-Home {
+        max-width: 768px;
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .Main-Home {
+        margin: 0 auto;
+        max-width: 1100px;
+        padding: 0 70px;
+    }
+    .App {
+        max-width: 1440px;
+        /* margin: 0 100px; */
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .Main-Home {
+        max-width: 1240px;
+        padding: 0 100px;
+    }
+
+    .App {
+        max-width: 1940px;
+        /* margin: 0 100px; */
+    }
+}
+
+/* @media only screen and (min-width: 1240px) {}
+@media only screen and (min-width: 1440px) {} */

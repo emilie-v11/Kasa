@@ -1,11 +1,23 @@
 .Nav-Header {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
+    /* width: 160px; */
+    /* margin-left: 50px; */
 }
 
 .Nav-Item {
     color: #ff6060;
     font-weight: 500;
-    font-size: 24px;
-    padding: 0 0 0 20px;
+    font-size: 12px;
+    padding: 10px 0 0 10px;
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1240px) {
+    .Nav-Item {
+        font-size: 24px;
+        padding: 0 0 0 20px;
+        text-transform: capitalize;
+    }
 }
