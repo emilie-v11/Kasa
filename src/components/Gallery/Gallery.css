@@ -26,19 +26,5 @@
 @media only screen and (min-width: 1440px) {
     .Gallery {
         padding: 25px 20px;
-        /* margin: 43px auto; */
-        /* justify-content: flex-start; */
     }
 }
-
-/* .Gallery {
-    background: #f7f7f7;
-    border-radius: 25px;
-    max-width: 100%;
-    height: auto;
-    margin-top: 43px;
-    padding: 25px 20px;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-} */

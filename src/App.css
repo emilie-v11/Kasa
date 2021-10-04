@@ -1,6 +1,4 @@
 .App {
-    /* max-width: 1440px; */
-    /* max-width: 375px; */
     height: auto;
     margin: 0 auto;
 }
@@ -8,15 +6,8 @@
 .Main-Home {
     max-width: 1240px;
     max-width: 375px;
-    /* padding:  0 10px; */
     margin: 0 auto;
 }
-
-/* .Main-Home {
-    max-width: 1240px;
-    padding: 40px 20px;
-    margin: 0 auto;
-} */
 
 @media only screen and (min-width: 768px) {
     .App {
@@ -36,7 +27,6 @@
     }
     .App {
         max-width: 1440px;
-        /* margin: 0 100px; */
     }
 }
 
@@ -48,9 +38,5 @@
 
     .App {
         max-width: 1940px;
-        /* margin: 0 100px; */
     }
 }
-
-/* @media only screen and (min-width: 1240px) {}
-@media only screen and (min-width: 1440px) {} */
