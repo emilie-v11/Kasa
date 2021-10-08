@@ -1,0 +1,70 @@
+.Main-Error404 {
+    max-width: 1240px;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 100px 57px 50px;
+    text-align: center;
+}
+
+.Content-404 {
+    color: #ff6060;
+    text-align: center;
+}
+
+.Number-404 {
+    font-size: 96px;
+    font-weight: 700;
+    color: #ff6060;
+    margin-bottom: 0;
+}
+
+.Text-404 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff6060;
+    line-height: 142.6%;
+    margin: 0 auto 133px;
+}
+
+.Back-Home {
+    color: #ff6060;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration-line: underline;
+    padding-bottom: ;
+}
+
+@media only screen and (min-width: 768px) {
+    .Main-Error404 {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 100px 57px 80px;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .Main-Error404 {
+        margin: 0 auto;
+        max-width: 1100px;
+        padding: 60px 57px;
+    }
+
+    .Number-404 {
+        font-size: 288px;
+        margin-bottom: 66px;
+    }
+
+    .Text-404 {
+        font-size: 36px;
+    }
+
+    .Back-Home {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .Main-Error404 {
+        max-width: 1240px;
+    }
+}

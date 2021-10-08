@@ -1,5 +1,5 @@
 .Thumbnail,
-.Thumbnail-Overlay {
+.Thumbnail-Mask {
     width: 335px;
     height: 255px;
 }
@@ -12,7 +12,7 @@
     overflow: hidden;
 }
 
-.Thumbnail-Overlay {
+.Thumbnail-Mask {
     position: absolute;
     top: 0;
     background: linear-gradient(
@@ -44,10 +44,10 @@
 
 @media only screen and (min-width: 1240px) {
     .Thumbnail {
-        margin: 20px 10px;
+        margin: 10px 10px;
     }
     .Thumbnail,
-    .Thumbnail-Overlay {
+    .Thumbnail-Mask {
         width: 340px;
         height: 340px;
     }

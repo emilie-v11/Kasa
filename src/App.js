@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import './App.css';
-import Banner from './components/Banner/Banner';
-import Footer from './components/Footer/Footer';
-import Gallery from './components/Gallery/Gallery';
-import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
+import Error404 from './pages/Error404/Error404';
+// import Header from './components/Header/Header';
+// import Footer from './components/Footer/Footer';
+// import Banner from './components/Banner/Banner';
+// import Gallery from './components/Gallery/Gallery';
 
 class App extends Component {
     constructor() {
@@ -11,23 +15,6 @@ class App extends Component {
 
         this.state = { properties: [] };
     }
-
-    // async componentDidMount() {
-    //     try {
-    //         let response = await fetch(
-    //             'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
-    //         );
-    //         if (response.ok) {
-    //             let data = await response.json();
-    //             // console.log(data);
-    //             return data;
-    //         } else {
-    //             console.log("La requête n'a pas abouti : " + response.status);
-    //         }
-    //     } catch (e) {
-    //         console.error(e);
-    //     }
-    // }
 
     componentDidMount() {
         fetch(
@@ -39,17 +26,23 @@ class App extends Component {
     }
 
     render() {
+        // const dataProperties = this.state.properties;
 
         return (
-            <div className="App">
-                <Header />
-                {/* <Main /> */}
-                <main className="Main-Home">
-                    <Banner />
-                    <Gallery properties={this.state.properties} />
-                </main>
-                <Footer />
-            </div>
+            <Router>
+                <div className="Wrap-Kasa">
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        {/* <main className="Main-Home">
+                                <Banner />
+                                <Gallery properties={this.state.properties} />
+                            </main> */}
+                        <Route path="/a-propos" />
+
+                        <Route component={Error404} />
+                    </Switch>
+                </div>
+            </Router>
         );
     }
 }

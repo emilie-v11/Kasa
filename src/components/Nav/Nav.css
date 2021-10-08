@@ -10,6 +10,12 @@
     font-size: 12px;
     padding: 10px 0 0 10px;
     text-transform: uppercase;
+    text-decoration: none;
+}
+
+.selected {
+    /* text-decoration: solid; */
+    text-decoration-line: underline;
 }
 
 @media only screen and (min-width: 1240px) {

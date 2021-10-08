@@ -7,10 +7,10 @@ import '../Logo/Logo.css';
 class Footer extends Component {
     render() {
         return (
-            <div className="Footer">
+            <footer className="Footer">
                 <Logo className="Logo-Footer" fill="#FFF" />
                 <p> © 2020 Kasa. All rights reserved </p>
-            </div>
+            </footer>
         );
     }
 }

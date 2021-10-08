@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Gallery.css';
 import Thumbnail from '../Thumbnail/Thumbnail';
 
-export class Gallery extends Component {
+class Gallery extends Component {
 
     render() {
         return (
