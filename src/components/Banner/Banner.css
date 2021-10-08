@@ -1,35 +1,35 @@
-.Banner {
+#Banner {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     max-width: 100%;
-    height: 111px;
     border-radius: 10px;
     margin: 0 auto;
     margin: 0 20px;
     max-width: 728px;
 }
 
+#Banner.Banner-Home {
+    height: 111px;
+}
+
+#Banner.Banner-About {
+    height: 223px;
+    margin-bottom: 10px;
+}
+
+.Banner-About h1 {
+    font-size: 0px;
+}
+
 .Banner-Image {
     background: no-repeat;
-    /* background-position: left 37% top 47%; */
-    /* object-position: 45% 50%; */
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-
-/* .Banner-Image {
-    background: url('https://images.unsplash.com/photo-1593201464350-96ec57065aa2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80')
-        no-repeat;
-    background-position: left 37% top 46.5%;
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-} */
 
 .Banner-Mask {
     position: absolute;
@@ -52,7 +52,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .Banner {
+    #Banner {
         margin: 0 auto;
         max-width: 100%;
     }
@@ -62,15 +62,20 @@
 }
 
 @media only screen and (min-width: 1240px) {
-    .Banner {
-        height: 223px;
-        border-radius: 25px;
-    }
-
+    #Banner,
     .Banner-Image,
     .Banner-Mask {
         border-radius: 25px;
     }
+
+    .Banner-Home {
+        height: 223px;
+    }
+
+    /* .Banner-Image,
+    .Banner-Mask {
+        border-radius: 25px;
+    } */
 
     .Banner-Text {
         font-size: 48px;

@@ -27,6 +27,12 @@
     height: 100%;
     color: white;
     object-fit: cover;
+    transform: translateZ(0);
+    transition: transform 0.35s ease-out;
+}
+
+.Thumbnail:hover .Thumbnail-Cover {
+    transform: scale(1.05);
 }
 
 .Thumbnail-Title {

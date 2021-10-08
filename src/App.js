@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Home';
 import Error404 from './pages/Error404/Error404';
+import About from './pages/About/About';
 // import Header from './components/Header/Header';
 // import Footer from './components/Footer/Footer';
 // import Banner from './components/Banner/Banner';
@@ -37,8 +38,8 @@ class App extends Component {
                                 <Banner />
                                 <Gallery properties={this.state.properties} />
                             </main> */}
-                        <Route path="/a-propos" />
-
+                        <Route path="/a-propos" component={About} />
+                        <Route path="/property/:id" />
                         <Route component={Error404} />
                     </Switch>
                 </div>

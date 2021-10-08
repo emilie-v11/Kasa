@@ -1,0 +1,65 @@
+.Dropdown {
+    max-width: 335px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.Header-Wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 335px;
+    height: 30px;
+    background: #ff6060;
+    border-radius: 5px;
+    padding: 6px 11px;
+}
+
+.Dropdown-Header {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    /* line-height: 19px; */
+    text-align: left;
+    color: #fff;
+}
+
+.Dropdown-Btn {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    padding: 0;
+    border: transparent;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: url(./chevron-down.svg) center center / 14px 24px no-repeat; */
+    /* transform: rotate(180deg); */
+}
+
+.Chevron-Down {
+    /* background: url(./chevron-down.svg) center center / 14px 24px no-repeat; */
+    color: #fff;
+    width: 14px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    /* transform: rotate(180deg); */
+}
+
+.Chevron-Up {
+    transform: rotate(180deg);
+}
+
+.Collapse {
+    background: #f7f7f7;
+    border-radius: 5px;
+    padding: 23px 9px;
+    color: #ff6060;
+}
