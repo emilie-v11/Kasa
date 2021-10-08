@@ -17,7 +17,7 @@ class About extends Component {
                         altText="Vallée de montagnes enneigées vue depuis une forêt de sapins pendant la journée"
                         title="A propos de Kasa"
                     />
-                    <div id="Accordion">
+                    <div className="Accordion">
                         <Dropdown
                             titleSection="Fiabilité"
                             textContent="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."

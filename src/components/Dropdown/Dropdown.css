@@ -1,22 +1,23 @@
 .Dropdown {
-    max-width: 335px;
     margin: 0 auto;
     padding: 10px 20px;
+    /* padding: 10px 0; */
+    max-width: 100%;
 }
 
-.Header-Wrap {
+.Heading-Wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    max-width: 335px;
+    max-width: 100%;
     height: 30px;
     background: #ff6060;
     border-radius: 5px;
     padding: 6px 11px;
 }
 
-.Dropdown-Header {
+.Dropdown-Heading {
     margin: 0;
     font-size: 13px;
     font-weight: 500;
@@ -27,7 +28,7 @@
 
 .Dropdown-Btn {
     position: absolute;
-    right: 0;
+    right: 0px;
     width: 20px;
     height: 20px;
     margin: 6px;
@@ -59,7 +60,52 @@
 
 .Collapse {
     background: #f7f7f7;
-    border-radius: 5px;
-    padding: 23px 9px;
+    border-radius: 0 0 5px 5px;
+    padding: 23px 8px;
+
+    /* TODO */
+    /* display: none; */
+}
+
+.Collapse-Context {
+    font-size: 12px;
+    font-weight: 400;
     color: #ff6060;
+    text-align: justify;
+}
+
+@media only screen and (min-width: 768px) {
+    .Dropdown {
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .Dropdown {
+        padding: 15px 0;
+    }
+
+    .Heading-Wrap {
+        height: 47px;
+    }
+
+    .Dropdown-Heading {
+        font-size: 24px;
+        padding: 6px 18px;
+    }
+
+    .Dropdown-Btn {
+        width: 29px;
+        height: 29px;
+        margin: 16px;
+    }
+
+    .Chevron-Down {
+        width: 24px;
+        height: auto;
+    }
+
+    .Collapse-Context {
+        font-size: 24px;
+    }
 }

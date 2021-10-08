@@ -31,8 +31,8 @@ class Dropdown extends Component {
             //     </div>
             // </section>
             <section className="Dropdown">
-                <div className="Header-Wrap" id="Heading-One">
-                    <h2 className="Dropdown-Header">{titleSection}</h2>
+                <div className="Heading-Wrap" id="Heading-One">
+                    <h2 className="Dropdown-Heading">{titleSection}</h2>
                     <button className="Btn Dropdown-Btn ">
                         <ChevronDown className="Chevron-Down" />
                         {/* <ChevronUp className="Chevron-Up" /> */}
@@ -45,7 +45,7 @@ class Dropdown extends Component {
                     aria-labelledby="heading-One"
                     data-parent="#accordion"
                 >
-                    <div className="card-body">{textContent}</div>
+                    <div className="Collapse-Context">{textContent}</div>
                 </div>
             </section>
         );
