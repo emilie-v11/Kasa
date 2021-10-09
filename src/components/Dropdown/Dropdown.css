@@ -1,7 +1,6 @@
 .Dropdown {
     margin: 0 auto;
     padding: 10px 20px;
-    /* padding: 10px 0; */
     max-width: 100%;
 }
 
@@ -21,7 +20,6 @@
     margin: 0;
     font-size: 13px;
     font-weight: 500;
-    /* line-height: 19px; */
     text-align: left;
     color: #fff;
 }
@@ -38,12 +36,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: url(./chevron-down.svg) center center / 14px 24px no-repeat; */
-    /* transform: rotate(180deg); */
 }
 
-.Chevron-Down {
-    /* background: url(./chevron-down.svg) center center / 14px 24px no-repeat; */
+.Chevron {
     color: #fff;
     width: 14px;
     height: auto;
@@ -51,10 +46,13 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    /* transform: rotate(180deg); */
 }
 
-.Chevron-Up {
+.Chevron.Down {
+    transform: rotate(0deg);
+}
+
+.Chevron.Up {
     transform: rotate(180deg);
 }
 
@@ -62,9 +60,14 @@
     background: #f7f7f7;
     border-radius: 0 0 5px 5px;
     padding: 23px 8px;
+}
 
-    /* TODO */
-    /* display: none; */
+.Collapse.isClose {
+    display: none;
+}
+
+.Collapse.isOpen {
+    display: block;
 }
 
 .Collapse-Context {
@@ -100,9 +103,13 @@
         margin: 16px;
     }
 
-    .Chevron-Down {
+    .Chevron {
         width: 24px;
         height: auto;
+    }
+
+    .Collapse {
+        padding: 28px 23px;
     }
 
     .Collapse-Context {

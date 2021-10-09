@@ -1,49 +1,47 @@
 import React, { Component } from 'react';
 import './Dropdown.css';
-// import './chevron-down.svg';
-import { ReactComponent as ChevronDown } from './chevron-down.svg';
-// import { ReactComponent as ChevronUp } from './chevron-up.svg';
+import { ReactComponent as Chevron } from './chevron-down.svg';
 
 class Dropdown extends Component {
     constructor() {
         super();
 
         this.state = { isOpen: false };
-
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e) {
-        // this.setState({ searchField: e.target.value });
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen,
+        });
     }
 
     render() {
         const { textContent, titleSection } = this.props;
 
         return (
-            // <section className="Dropdown">
-            //     <div>
-            //         <h2 className="Dropdown-Title">Fiabilité</h2>
-            //         <button className="Dropdown-Button"> V </button>
-            //     </div>
-            //     <div>
-            //         <p>content</p>
-            //     </div>
-            // </section>
             <section className="Dropdown">
-                <div className="Heading-Wrap" id="Heading-One">
+                <div
+                    className="Heading-Wrap"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
                     <h2 className="Dropdown-Heading">{titleSection}</h2>
-                    <button className="Btn Dropdown-Btn ">
-                        <ChevronDown className="Chevron-Down" />
-                        {/* <ChevronUp className="Chevron-Up" /> */}
+                    <button
+                        className="Dropdown-Btn "
+                        onClick={this.toggle.bind(this)}
+                    >
+                        <Chevron
+                            className={
+                                'Chevron ' + (this.state.isOpen ? 'Up' : 'Down')
+                            }
+                        />
                     </button>
                 </div>
 
                 <div
-                    id="Collapse-One"
-                    className="Collapse Show"
-                    aria-labelledby="heading-One"
-                    data-parent="#accordion"
+                    className={
+                        'Collapse ' + (this.state.isOpen ? 'isOpen' : 'isClose')
+                    }
                 >
                     <div className="Collapse-Context">{textContent}</div>
                 </div>
