@@ -36,6 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .Chevron {
@@ -70,7 +71,7 @@
     display: block;
 }
 
-.Collapse-Context {
+.Collapse-Content {
     font-size: 12px;
     font-weight: 400;
     color: #ff6060;
@@ -112,7 +113,7 @@
         padding: 28px 23px;
     }
 
-    .Collapse-Context {
+    .Collapse-Content {
         font-size: 24px;
     }
 }

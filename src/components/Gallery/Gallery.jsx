@@ -3,17 +3,16 @@ import './Gallery.css';
 import Thumbnail from '../Thumbnail/Thumbnail';
 
 class Gallery extends Component {
-
     render() {
         return (
             <section className="Gallery">
-                {this.props.properties.map(property => (
+                {this.props.accommodations.map(accommodation => (
                     <Thumbnail
-                        key={property.id}
-                        id={property.id}
-                        cover={property.cover}
-                        title={property.title}
-                        location={property.location}
+                        key={accommodation.id}
+                        id={accommodation.id}
+                        cover={accommodation.cover}
+                        title={accommodation.title}
+                        location={accommodation.location}
                     />
                 ))}
             </section>

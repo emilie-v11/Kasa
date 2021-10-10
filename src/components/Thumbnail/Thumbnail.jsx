@@ -6,7 +6,7 @@ import './Thumbnail.css';
 class Thumbnail extends Component {
     render() {
         return (
-            <Link to={`/property/${this.props.id}`}>
+            <Link to={`/accommodation/${this.props.id}`}>
                 <article className="Thumbnail">
                     <img
                         className="Thumbnail-Cover"

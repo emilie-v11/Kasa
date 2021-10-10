@@ -1,0 +1,67 @@
+.Carrousel {
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+    max-width: 100%;
+    width: 335px;
+    height: 255px;
+}
+
+.Carrousel-Image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.Btn-Next,
+.Btn-Prev {
+    border: transparent;
+    background: url(../../img/chevron-right.svg) center center / 12px 20px
+        no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -12px;
+    transform: rotate(0deg);
+    cursor: pointer;
+    /* opacity: 0.5;
+	transition: opacity 300ms; */
+}
+
+.Btn-Prev {
+    top: 50%;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.Btn-Next:hover,
+.Btn-Prev:hover {
+    border: solid blue 3px;
+    /* opacity: 1; */
+}
+
+@media only screen and (min-width: 768px) {
+    .Carrousel {
+        /* width: 708px; */
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .Carrousel {
+        width: 100%;
+        height: 415px;
+    }
+
+    .Btn-Next,
+    .Btn-Prev {
+        background: url(../../img/chevron-right.svg) center center / 47px 80px
+            no-repeat;
+        width: 96px;
+        height: 120px;
+        margin-top: -60px;
+    }
+}

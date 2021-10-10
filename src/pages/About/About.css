@@ -1,7 +1,9 @@
 .Main-About {
-    max-width: 1240px;
-    max-width: 375px;
+    /* max-width: 1240px;
+    max-width: 375px; */
+    max-width: 345px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .Accordion {
@@ -39,6 +41,6 @@
     }
 
     .Accordion {
-        padding: 0 108px 200px;
+        padding: 0 108px 310px;
     }
 }

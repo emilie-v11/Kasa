@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/Home/Home';
 import Error404 from './pages/Error404/Error404';
 import About from './pages/About/About';
+import AccommodationSheet from './pages/AccommodationSheet/AccommodationSheet';
 // import Header from './components/Header/Header';
 // import Footer from './components/Footer/Footer';
 // import Banner from './components/Banner/Banner';
@@ -14,7 +15,7 @@ class App extends Component {
     constructor() {
         super();
 
-        this.state = { properties: [] };
+        this.state = { accommodations: [] };
     }
 
     componentDidMount() {
@@ -22,12 +23,12 @@ class App extends Component {
             'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
         )
             .then(response => response.json())
-            .then(json => this.setState({ properties: json })) //console.log(data))
+            .then(json => this.setState({ accommodations: json })) //console.log(data))
             .catch(error => console.log(error, 'I have an error'));
     }
 
     render() {
-        // const dataProperties = this.state.properties;
+        // const dataProperties = this.state.accommodations;
 
         return (
             <Router>
@@ -36,10 +37,15 @@ class App extends Component {
                         <Route exact path="/" component={Home} />
                         {/* <main className="Main-Home">
                                 <Banner />
-                                <Gallery properties={this.state.properties} />
+                                <Gallery accommodations={this.state.accommodations} />
                             </main> */}
                         <Route path="/a-propos" component={About} />
-                        <Route path="/property/:id" />
+                        {/* <Route path="/accommodation/:id" component={AccommodationSheet} /> */}
+                        <Route path="/accommodation/:id">
+                            <AccommodationSheet
+                                accommodations={this.state.accommodations}
+                            />
+                        </Route>
                         <Route component={Error404} />
                     </Switch>
                 </div>

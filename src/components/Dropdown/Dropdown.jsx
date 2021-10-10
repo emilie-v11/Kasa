@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Dropdown.css';
 import { ReactComponent as Chevron } from './chevron-down.svg';
+import './Dropdown.css';
 
 class Dropdown extends Component {
     constructor() {
@@ -43,7 +43,7 @@ class Dropdown extends Component {
                         'Collapse ' + (this.state.isOpen ? 'isOpen' : 'isClose')
                     }
                 >
-                    <div className="Collapse-Context">{textContent}</div>
+                    <div className="Collapse-Content">{textContent}</div>
                 </div>
             </section>
         );
