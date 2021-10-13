@@ -1,26 +1,58 @@
 import React, { Component } from 'react';
-import imgTest from './accommodation-1-3.jpg';
+// import imgTest from './accommodation-1-3.jpg';
 import './Carrousel.css';
 
 class Carrousel extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            imageDisplay: 0,
+        };
+    }
+
+    nextImage = () => {
+        this.setState(prevState => ({
+            imageDisplay:
+                prevState.imageDisplay === this.props.images.length - 1
+                    ? 0
+                    : prevState.imageDisplay + 1,
+        }));
+    };
+
+    prevImage = () => {
+        this.setState(prevState => ({
+            imageDisplay:
+                prevState.imageDisplay === 0
+                    ? this.props.images.length - 1
+                    : prevState.imageDisplay - 1,
+        }));
+    };
+
     render() {
-        // const { imgSrc, altText } = this.props;
+        const { imageDisplay } = this.state;
+        console.log(imageDisplay);
 
         return (
             <div className="Carrousel " role="dialog">
                 <img
                     className="Carrousel-Image"
-                    src={imgTest}
+                    src={this.props.images[imageDisplay]}
                     alt=""
-                    // src={imgSrc}
-                    // alt={altText}
                 />
-                <button className="Btn-Next" aria-label="Next image">
-                    {/* <span className="sr-only">Suivant</span> */}
-                </button>
-                <button className="Btn-Prev " aria-label="Previous image">
-                    {/* <span className="sr-only">Précedent</span> */}
-                </button>
+                <button
+                    className="Btn-Prev "
+                    aria-label="Previous image"
+                    onClick={this.prevImage}
+                ></button>
+                <button
+                    className="Btn-Next"
+                    aria-label="Next image"
+                    onClick={this.nextImage}
+                ></button>
+                <span className="Carrousel-Counter">
+                    {`${imageDisplay + 1} / ${this.props.images.length}`}
+                </span>
             </div>
         );
     }

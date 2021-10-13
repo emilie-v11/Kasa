@@ -6,8 +6,8 @@ import Home from './pages/Home/Home';
 import Error404 from './pages/Error404/Error404';
 import About from './pages/About/About';
 import AccommodationSheet from './pages/AccommodationSheet/AccommodationSheet';
-// import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 // import Banner from './components/Banner/Banner';
 // import Gallery from './components/Gallery/Gallery';
 
@@ -15,7 +15,9 @@ class App extends Component {
     constructor() {
         super();
 
-        this.state = { accommodations: [] };
+        this.state = {
+            accommodations: [],
+        };
     }
 
     componentDidMount() {
@@ -28,11 +30,15 @@ class App extends Component {
     }
 
     render() {
-        // const dataProperties = this.state.accommodations;
+        const data = [];
+        data.push(this.state.accommodations);
+        console.log(data);
 
         return (
             <Router>
                 <div className="Wrap-Kasa">
+                    <Header />
+
                     <Switch>
                         <Route exact path="/" component={Home} />
                         {/* <main className="Main-Home">
@@ -40,14 +46,24 @@ class App extends Component {
                                 <Gallery accommodations={this.state.accommodations} />
                             </main> */}
                         <Route path="/a-propos" component={About} />
-                        {/* <Route path="/accommodation/:id" component={AccommodationSheet} /> */}
-                        <Route path="/accommodation/:id">
+                        <Route
+                            path="/accommodation/:id"
+                            component={AccommodationSheet}
+                        />
+
+                        {/* <Route path="/accommodation/:id">
                             <AccommodationSheet
                                 accommodations={this.state.accommodations}
                             />
-                        </Route>
+                        </Route> */}
+                        {/* <Route
+                            path="/accommodation/:id"
+                            render={props => <AccommodationSheet {...props} />}
+                        /> */}
                         <Route component={Error404} />
                     </Switch>
+
+                    <Footer />
                 </div>
             </Router>
         );

@@ -37,16 +37,34 @@
     transform: rotate(180deg);
 }
 
-.Btn-Next:hover,
+/* .Btn-Next:hover,
 .Btn-Prev:hover {
     border: solid blue 3px;
-    /* opacity: 1; */
+    opacity: 1;
+} */
+
+.Carrousel-Counter {
+    display: none;
 }
 
 @media only screen and (min-width: 768px) {
     .Carrousel {
         /* width: 708px; */
         width: 100%;
+    }
+
+    .Carrousel-Counter {
+        display: flex;
+        position: absolute;
+        /* justify-content: center;
+        align-items: flex-start; */
+        bottom: 20px;
+        left: 50%;
+        padding-right: 22px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 18px;
+        /* text-align: center; */
     }
 }
 

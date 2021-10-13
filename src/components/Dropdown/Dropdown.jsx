@@ -9,11 +9,16 @@ class Dropdown extends Component {
         this.state = { isOpen: false };
     }
 
-    toggle() {
+    toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen,
         });
-    }
+    };
+    // toggle() {
+    //     this.setState({
+    //         isOpen: !this.state.isOpen,
+    //     });
+    // }
 
     render() {
         const { textContent, titleSection } = this.props;
@@ -28,7 +33,8 @@ class Dropdown extends Component {
                     <h2 className="Dropdown-Heading">{titleSection}</h2>
                     <button
                         className="Dropdown-Btn "
-                        onClick={this.toggle.bind(this)}
+                        onClick={this.toggle}
+                        // onClick={this.toggle.bind(this)}
                     >
                         <Chevron
                             className={
@@ -43,7 +49,7 @@ class Dropdown extends Component {
                         'Collapse ' + (this.state.isOpen ? 'isOpen' : 'isClose')
                     }
                 >
-                    <div className="Collapse-Content">{textContent}</div>
+                    <ul className="Collapse-Content">{textContent}</ul>
                 </div>
             </section>
         );

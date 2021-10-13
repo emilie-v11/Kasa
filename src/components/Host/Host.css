@@ -1,0 +1,71 @@
+.Accommodation-Host {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 40%;
+}
+
+.Host-Name {
+    color: #ff6060;
+    font-weight: 500;
+    font-size: 12px;
+    /* width: 60%; */
+    text-align: right;
+    padding-right: 10px;
+    margin: 0;
+}
+
+.Host-Picture {
+    background: #c4c4c4;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .Host-Name {
+        font-size: 14px;
+    }
+
+    .Host-Picture {
+        width: 48px;
+        height: 48px;
+    }
+
+    .Accommodation-Host {
+        justify-content: flex-end;
+        flex-direction: row;
+        max-width: 100%;
+        /* margin-bottom: 20px; */
+    }
+}
+
+
+@media only screen and (min-width: 1240px) {
+    .Host-Name {
+        font-size: 18px;
+    }
+
+    .Host-Picture {
+        width: 64px;
+        height: 64px;
+    }
+
+    .Accommodation-Host {
+        justify-content: flex-end;
+        flex-direction: row;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .Accommodation-Host {
+        justify-content: flex-end;
+        flex-direction: row;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}

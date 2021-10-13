@@ -5,16 +5,18 @@ import './Thumbnail.css';
 
 class Thumbnail extends Component {
     render() {
+        const { id, cover, location, title } = this.props;
+
         return (
-            <Link to={`/accommodation/${this.props.id}`}>
+            <Link to={`/accommodation/${id}`}>
                 <article className="Thumbnail">
                     <img
                         className="Thumbnail-Cover"
-                        src={this.props.cover}
-                        alt={`Une location située en ${this.props.location}`}
+                        src={cover}
+                        alt={`Une location située en ${location}`}
                     />
                     <div className="Thumbnail-Mask"></div>
-                    <h2 className="Thumbnail-Title">{this.props.title}</h2>
+                    <h2 className="Thumbnail-Title">{title}</h2>
                 </article>
             </Link>
         );
