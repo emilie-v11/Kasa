@@ -14,28 +14,19 @@ class Dropdown extends Component {
             isOpen: !this.state.isOpen,
         });
     };
-    // toggle() {
-    //     this.setState({
-    //         isOpen: !this.state.isOpen,
-    //     });
-    // }
 
     render() {
-        const { textContent, titleSection } = this.props;
+        const { content, title } = this.props;
 
         return (
             <section className="Dropdown">
                 <div
                     className="Heading-Wrap"
                     aria-haspopup="true"
-                    aria-expanded="false"
+                    aria-expanded={this.state.isOpen ? 'true' : 'false'}
                 >
-                    <h2 className="Dropdown-Heading">{titleSection}</h2>
-                    <button
-                        className="Dropdown-Btn "
-                        onClick={this.toggle}
-                        // onClick={this.toggle.bind(this)}
-                    >
+                    <h2 className="Dropdown-Heading">{title}</h2>
+                    <button className="Dropdown-Btn " onClick={this.toggle}>
                         <Chevron
                             className={
                                 'Chevron ' + (this.state.isOpen ? 'Up' : 'Down')
@@ -43,13 +34,12 @@ class Dropdown extends Component {
                         />
                     </button>
                 </div>
-
                 <div
                     className={
                         'Collapse ' + (this.state.isOpen ? 'isOpen' : 'isClose')
                     }
                 >
-                    <ul className="Collapse-Content">{textContent}</ul>
+                    <ul className="Collapse-Content">{content}</ul>
                 </div>
             </section>
         );

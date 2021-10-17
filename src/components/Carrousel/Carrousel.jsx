@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import imgTest from './accommodation-1-3.jpg';
 import './Carrousel.css';
 
 class Carrousel extends Component {
@@ -31,7 +30,7 @@ class Carrousel extends Component {
 
     render() {
         const { imageDisplay } = this.state;
-        console.log(imageDisplay);
+        console.log(imageDisplay, this.state);
 
         return (
             <div className="Carrousel " role="dialog">
@@ -40,16 +39,20 @@ class Carrousel extends Component {
                     src={this.props.images[imageDisplay]}
                     alt=""
                 />
-                <button
-                    className="Btn-Prev "
-                    aria-label="Previous image"
-                    onClick={this.prevImage}
-                ></button>
-                <button
-                    className="Btn-Next"
-                    aria-label="Next image"
-                    onClick={this.nextImage}
-                ></button>
+                {this.props.images.length > 1 && (
+                    <>
+                        <button
+                            className="Btn-Prev "
+                            aria-label="Previous image"
+                            onClick={this.prevImage}
+                        ></button>
+                        <button
+                            className="Btn-Next"
+                            aria-label="Next image"
+                            onClick={this.nextImage}
+                        ></button>
+                    </>
+                )}
                 <span className="Carrousel-Counter">
                     {`${imageDisplay + 1} / ${this.props.images.length}`}
                 </span>

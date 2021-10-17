@@ -1,7 +1,9 @@
 .Thumbnail,
 .Thumbnail-Mask {
-    width: 335px;
+    /* width: 335px; */
     height: 255px;
+    max-width: 335px;
+    width: 100%;
 }
 
 .Thumbnail {

@@ -3,24 +3,24 @@ import './Host.css';
 
 class Host extends Component {
     render() {
-        const { host } = this.props;
-        console.log(this.props);
-        console.log(host);
-        const { name, picture } = host;
-        console.log(name);
-        console.log(picture);
-
-        const firstName = name.split(' ')[0];
-        const lastName = name.split(' ')[1];
-        console.log(firstName);
-        console.log(lastName);
+        const name = this.props.host.name;
+        const hostName = name.split(' ');
+        const picture = this.props.host.picture;
+        // const { name } = this.props.accommodation.host.name;
+        // console.log(this.props);
+        // // const { name, picture } = host;
+        // const firstName = name.split(' ')[0];
+        // const lastName = name.split(' ')[1];
 
         return (
             <div className="Accommodation-Host">
                 <p className="Host-Name">
-                    <span>{firstName}</span>
+                    <span>{hostName[0]}</span>
                     <br />
-                    <span>{lastName}</span>
+                    <span>{hostName[1]}</span>
+                    {/* <span>{firstName}</span>
+                    <br />
+                    <span>{lastName}</span> */}
                 </p>
                 <img className="Host-Picture" src={picture} alt="" />
             </div>

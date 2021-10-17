@@ -4,6 +4,8 @@ import Thumbnail from '../Thumbnail/Thumbnail';
 
 class Gallery extends Component {
     render() {
+        console.log(this.props);
+
         return (
             <section className="Gallery">
                 {this.props.accommodations.map(accommodation => (
