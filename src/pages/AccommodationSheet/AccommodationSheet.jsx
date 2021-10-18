@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Carrousel from '../../components/Carrousel/Carrousel';
-import Dropdown from '../../components/Dropdown/Dropdown';
-import Host from '../../components/Host/Host';
 import Loader from '../../components/Loader/Loader';
+import Error404 from '../Error404/Error404';
+import Carrousel from '../../components/Carrousel/Carrousel';
+import Host from '../../components/Host/Host';
 import Rating from '../../components/Rating/Rating';
 import Tags from '../../components/Tags/Tags';
-import Error404 from '../Error404/Error404';
-// import { accommodations } from '../../data/data';
+import Dropdown from '../../components/Dropdown/Dropdown';
 import './AccommodationSheet.css';
 
 class AccommodationSheet extends Component {
@@ -36,7 +35,7 @@ class AccommodationSheet extends Component {
                     });
                 } else if (!data.some(elt => elt.id === idParam)) {
                     this.setState({
-                        error: 'wrong way',
+                        error: 'error',
                     });
                 }
             })
@@ -46,6 +45,7 @@ class AccommodationSheet extends Component {
     }
 
     render() {
+        // console.log(this.state);
         const {
             title,
             location,
@@ -57,14 +57,14 @@ class AccommodationSheet extends Component {
             description,
         } = this.state.accommodation;
 
-        console.log(this.state);
         const { error, isLoaded } = this.state;
 
         return (
             <>
-                {!isLoaded && error === null ? (
+                {!isLoaded && !error ? (
+                    //{!isLoaded && (error === null || error !== 'error 404') ? (
                     <Loader />
-                ) : !isLoaded && error !== null ? (
+                ) : !isLoaded && error ? (
                     <Error404 />
                 ) : (
                     <main className="Main-AccommodationSheet">
@@ -98,6 +98,5 @@ class AccommodationSheet extends Component {
         );
     }
 }
-// }
 
 export default AccommodationSheet;

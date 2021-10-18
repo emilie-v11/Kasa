@@ -30,7 +30,6 @@ class Carrousel extends Component {
 
     render() {
         const { imageDisplay } = this.state;
-        console.log(imageDisplay, this.state);
 
         return (
             <div className="Carrousel " role="dialog">

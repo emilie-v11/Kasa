@@ -6,11 +6,6 @@ class Host extends Component {
         const name = this.props.host.name;
         const hostName = name.split(' ');
         const picture = this.props.host.picture;
-        // const { name } = this.props.accommodation.host.name;
-        // console.log(this.props);
-        // // const { name, picture } = host;
-        // const firstName = name.split(' ')[0];
-        // const lastName = name.split(' ')[1];
 
         return (
             <div className="Accommodation-Host">
@@ -18,9 +13,6 @@ class Host extends Component {
                     <span>{hostName[0]}</span>
                     <br />
                     <span>{hostName[1]}</span>
-                    {/* <span>{firstName}</span>
-                    <br />
-                    <span>{lastName}</span> */}
                 </p>
                 <img className="Host-Picture" src={picture} alt="" />
             </div>

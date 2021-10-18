@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
+import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
-import Error404 from './pages/Error404/Error404';
 import About from './pages/About/About';
 import AccommodationSheet from './pages/AccommodationSheet/AccommodationSheet';
-import Header from './components/Header/Header';
+import Error404 from './pages/Error404/Error404';
 import Footer from './components/Footer/Footer';
+import './App.css';
 
 class App extends Component {
     render() {
@@ -16,12 +16,9 @@ class App extends Component {
                     <Header />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        {/* <Route exact path="/">
-                            <Home accommodations={accommodations} />
-                        </Route> */}
                         <Route path="/a-propos" component={About} />
                         <Route
-                            path="/accommodation/:id"
+                            path="/location/:id"
                             component={AccommodationSheet}
                         />
                         <Route component={Error404} />

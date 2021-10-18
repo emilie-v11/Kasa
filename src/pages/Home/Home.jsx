@@ -31,14 +31,14 @@ class Home extends Component {
             .catch(error => {
                 this.setState({ error });
             });
-        //(error => console.log(error, 'I have an error'));
     }
     render() {
+        // console.log(this.state);
         const { error, isLoaded } = this.state;
-        console.log(this.state);
         return (
             <>
-                {!isLoaded && error === null ? (
+                {!isLoaded && !error ? (
+                    //{!isLoaded && (error === null || error) ? (
                     <Loader />
                 ) : !isLoaded && error ? (
                     <Error404 />

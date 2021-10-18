@@ -8,7 +8,7 @@ class Thumbnail extends Component {
         const { id, cover, location, title } = this.props;
 
         return (
-            <Link to={`/accommodation/${id}`}>
+            <Link to={`/location/${id}`}>
                 <article className="Thumbnail">
                     <img
                         className="Thumbnail-Cover"

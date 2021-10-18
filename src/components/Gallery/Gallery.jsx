@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './Gallery.css';
 import Thumbnail from '../Thumbnail/Thumbnail';
+import './Gallery.css';
 
 class Gallery extends Component {
     render() {
-        console.log(this.props);
 
         return (
             <section className="Gallery">
