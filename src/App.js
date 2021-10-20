@@ -38,7 +38,6 @@ class App extends Component {
 
     render() {
         const { accommodations, isLoaded, error } = this.state;
-        console.log(accommodations);
 
         return (
             <Router>
@@ -57,20 +56,6 @@ class App extends Component {
                             )}
                         />
                         <Route exact path="/a-propos" component={About} />
-                        {/* <Route
-                            path="/location/:id"
-                            component={AccommodationSheet}
-                        /> */}
-                        {/* <Route
-                            path="/location/:id"
-                            render={({ match }) => (
-                                <AccommodationSheet
-                                    accommodation={accommodations.find(
-                                        elt => elt.id === match.params.id
-                                    )}
-                                />
-                            )}
-                        /> */}
                         <Route
                             exact
                             path="/location/:id"

@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import Banner from '../../components/Banner/Banner';
 import Gallery from '../../components/Gallery/Gallery';
 import Loader from '../../components/Loader/Loader';
-// import Error404 from '../Error404/Error404';
 import './Home.css';
 
 class Home extends Component {
     render() {
         const { accommodations, isLoaded } = this.props;
-        console.log(this.props);
+
         if (!isLoaded) {
             return <Loader />;
         } else {

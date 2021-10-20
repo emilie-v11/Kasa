@@ -17,8 +17,7 @@
 .Btn-Next,
 .Btn-Prev {
     border: transparent;
-    background: url(../../img/chevron-right.svg) center center / 12px 20px
-        no-repeat;
+    background: url(./chevron-right.svg) center center / 12px 20px no-repeat;
     width: 24px;
     height: 24px;
     position: absolute;
@@ -27,8 +26,6 @@
     margin-top: -12px;
     transform: rotate(0deg);
     cursor: pointer;
-    /* opacity: 0.5;
-	transition: opacity 300ms; */
 }
 
 .Btn-Prev {
@@ -37,34 +34,24 @@
     transform: rotate(180deg);
 }
 
-/* .Btn-Next:hover,
-.Btn-Prev:hover {
-    border: solid blue 3px;
-    opacity: 1;
-} */
-
 .Carrousel-Counter {
     display: none;
 }
 
 @media only screen and (min-width: 768px) {
     .Carrousel {
-        /* width: 708px; */
         width: 100%;
     }
 
     .Carrousel-Counter {
         display: flex;
         position: absolute;
-        /* justify-content: center;
-        align-items: flex-start; */
         bottom: 20px;
         left: 50%;
         padding-right: 22px;
         color: #fff;
         font-weight: 500;
         font-size: 18px;
-        /* text-align: center; */
     }
 }
 
@@ -76,8 +63,7 @@
 
     .Btn-Next,
     .Btn-Prev {
-        background: url(../../img/chevron-right.svg) center center / 47px 80px
-            no-repeat;
+        background: url(./chevron-right.svg) center center / 47px 80px no-repeat;
         width: 96px;
         height: 120px;
         margin-top: -60px;

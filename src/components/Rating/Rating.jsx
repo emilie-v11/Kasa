@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ReactComponent as StarFill } from '../../img/star-fill.svg';
+import { ReactComponent as StarFill } from './star-fill.svg';
 import './Rating.css';
 
 class Rating extends Component {

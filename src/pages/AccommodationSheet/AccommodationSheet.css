@@ -6,7 +6,6 @@
 
 .Accommodation-Content {
     max-width: 100%;
-    /* padding: 0 20px; */
     margin-bottom: 150px;
     height: auto;
 }
@@ -95,7 +94,6 @@ div.Accommodation-Accordion .Heading-Wrap {
     }
 
     div.Accommodation-Accordion .Dropdown {
-        /* width: 50%; */
         width: 500px;
         margin: 0;
     }
@@ -133,7 +131,6 @@ div.Accommodation-Accordion .Heading-Wrap {
 
     div.Accommodation-Accordion .Dropdown {
         width: 582px;
-        /* margin-top: 20px; */
         margin-top: 0px;
     }
 }

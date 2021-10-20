@@ -5,7 +5,7 @@ class Loader extends Component {
     render() {
         return (
             <div className="Loader-Overlay">
-                <p>Chargement...</p>
+                <p>Chargement ...</p>
                 <svg
                     className="spinner"
                     viewBox="0 0 66 66"

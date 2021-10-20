@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Loader from '../../components/Loader/Loader';
+import Error404 from '../Error404/Error404';
 import Carrousel from '../../components/Carrousel/Carrousel';
 import Host from '../../components/Host/Host';
 import Rating from '../../components/Rating/Rating';
 import Tags from '../../components/Tags/Tags';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import './AccommodationSheet.css';
-import Error404 from '../Error404/Error404';
-import { Redirect } from 'react-router-dom';
 
 class AccommodationSheet extends Component {
     constructor(props) {
@@ -23,19 +22,10 @@ class AccommodationSheet extends Component {
 
     componentDidMount() {
         const idParam = this.props.match.params.id;
-        console.log(idParam);
-        if (!this.props.accommodations.some(elt => elt.id === idParam)) {
-            this.setState({
-                isLoaded: true,
-                error: false,
-                notFound: true,
-            });
-            return <Error404 />;
-        }
         const dataById = this.props.accommodations.find(
             el => el.id === idParam
         );
-        console.log(dataById);
+
         if (dataById) {
             this.setState({
                 isLoaded: true,
@@ -43,20 +33,22 @@ class AccommodationSheet extends Component {
                 notFound: false,
                 accommodation: dataById,
             });
-        } else {
+        } else if (!this.props.accommodations.some(elt => elt.id === idParam)) {
             this.setState({
                 isLoaded: false,
                 error: true,
                 notFound: true,
             });
+        } else {
+            this.setState({
+                isLoaded: false,
+                error: true,
+                notFound: false,
+            });
         }
-        console.log(this.state.accommodation);
     }
 
     render() {
-        console.log(this.props);
-        console.log(this.state);
-        console.log(this.props.accommodations);
         const {
             title,
             location,
@@ -67,13 +59,13 @@ class AccommodationSheet extends Component {
             rating,
             description,
         } = this.state.accommodation;
-        console.log(this.state.accommodation);
 
-        const { isLoaded, error, notFound } = this.state;
+        const { isLoaded, notFound, error } = this.state;
+        const isCharged = this.props.accommodations.length;
 
-        if (!isLoaded || !this.props.accommodations.length) {
+        if ((!isLoaded && !error) || !isCharged) {
             return <Loader />;
-        } else if (notFound) {
+        } else if (notFound || error) {
             return <Error404 />;
         } else {
             return (

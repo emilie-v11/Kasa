@@ -6,7 +6,6 @@ import './About.css';
 
 class About extends Component {
     render() {
-        // console.log(about);
         return (
             <main className="Main-About">
                 <Banner

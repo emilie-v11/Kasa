@@ -38,7 +38,6 @@
     .Main-Error404 {
         max-width: 768px;
         margin: 0 auto;
-        /* padding: 100px 57px 80px; */
         padding: 175px 57px 235px;
     }
 }
@@ -47,7 +46,6 @@
     .Main-Error404 {
         margin: 0 auto;
         max-width: 1100px;
-        /* padding: 60px 57px; */
         padding: 155px 57px 235px;
     }
 
