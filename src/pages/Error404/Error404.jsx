@@ -12,7 +12,7 @@ class Error404 extends Component {
                         Oups ! La page que vous demandez n'existe pas
                     </p>
                 </div>
-                <Link className="Back-Home" exact to="/">
+                <Link className="Back-Home" to="/">
                     Retourner sur la page d'accueil
                 </Link>
             </main>

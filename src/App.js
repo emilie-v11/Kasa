@@ -9,17 +9,79 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            error: false,
+            isLoaded: false,
+            accommodations: [],
+        };
+    }
+
+    componentDidMount() {
+        fetch(
+            'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
+        )
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    isLoaded: true,
+                    accommodations: data,
+                    error: false,
+                });
+            })
+            .catch(error => {
+                this.setState({ ...this.state, error: true, isLoaded: false });
+            });
+    }
+
     render() {
+        const { accommodations, isLoaded, error } = this.state;
+        console.log(accommodations);
+
         return (
             <Router>
                 <div className="Wrap-Kasa">
                     <Header />
                     <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/a-propos" component={About} />
+                        {/* <Route exact path="/" component={Home} /> */}
                         <Route
+                            exact
+                            path="/"
+                            component={() => (
+                                <Home
+                                    accommodations={accommodations}
+                                    isLoaded={isLoaded}
+                                    error={error}
+                                />
+                            )}
+                        />
+                        <Route exact path="/a-propos" component={About} />
+                        {/* <Route
                             path="/location/:id"
                             component={AccommodationSheet}
+                        /> */}
+                        {/* <Route
+                            path="/location/:id"
+                            render={({ match }) => (
+                                <AccommodationSheet
+                                    accommodation={accommodations.find(
+                                        elt => elt.id === match.params.id
+                                    )}
+                                />
+                            )}
+                        /> */}
+                        <Route
+                            path="/location/:id"
+                            component={props => (
+                                <AccommodationSheet
+                                    accommodations={accommodations}
+                                    isLoaded={isLoaded}
+                                    error={error}
+                                    {...props}
+                                />
+                            )}
                         />
                         <Route component={Error404} />
                     </Switch>
