@@ -45,7 +45,6 @@ class App extends Component {
                 <div className="Wrap-Kasa">
                     <Header />
                     <Switch>
-                        {/* <Route exact path="/" component={Home} /> */}
                         <Route
                             exact
                             path="/"
@@ -73,6 +72,7 @@ class App extends Component {
                             )}
                         /> */}
                         <Route
+                            exact
                             path="/location/:id"
                             component={props => (
                                 <AccommodationSheet

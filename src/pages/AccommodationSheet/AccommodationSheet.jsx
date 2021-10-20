@@ -12,12 +12,11 @@ import { Redirect } from 'react-router-dom';
 class AccommodationSheet extends Component {
     constructor(props) {
         super(props);
-        // this._isMounted = false;
 
         this.state = {
             isLoaded: false,
             error: false,
-            Redirect: false,
+            notFound: false,
             accommodation: [],
         };
     }
@@ -25,8 +24,14 @@ class AccommodationSheet extends Component {
     componentDidMount() {
         const idParam = this.props.match.params.id;
         console.log(idParam);
-        // if (!this.props.accommodations.some(elt => elt.id === idParam))
-        //     return <Redirect to="/404" />;
+        if (!this.props.accommodations.some(elt => elt.id === idParam)) {
+            this.setState({
+                isLoaded: true,
+                error: false,
+                notFound: true,
+            });
+            return <Error404 />;
+        }
         const dataById = this.props.accommodations.find(
             el => el.id === idParam
         );
@@ -35,75 +40,23 @@ class AccommodationSheet extends Component {
             this.setState({
                 isLoaded: true,
                 error: false,
-                Redirect: false,
-                accommodation: dataById, //{ ...dataById },
+                notFound: false,
+                accommodation: dataById,
             });
         } else {
-            this.setState({ ...this.state, error: true, isLoaded: false }); // ...this.state,
-            if (!this.props.accommodations.some(elt => elt.id === idParam)) {
-                this.setState({
-                    isLoaded: false,
-                    error: true,
-                    Redirect: true,
-                });
-
-                // this._isMounted = true;
-                // setTimeout(() => {
-                //     this.setState({
-                //         isLoaded: false,
-                //         error: true,
-                //         Redirect: true,
-                //         accommodation: [],
-                //     });
-                // }, 2000);
-            } else {
-                this.setState({
-                    isLoaded: false,
-                    error: false,
-                    Redirect: false,
-                });
-            }
+            this.setState({
+                isLoaded: false,
+                error: true,
+                notFound: true,
+            });
         }
-
         console.log(this.state.accommodation);
-
-        // fetch(
-        //     'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
-        // )
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         const idParam = this.props.match.params.id;
-        //         const dataById = data.find(el => el.id === idParam);
-        //         if (dataById) {
-        //             this.setState({
-        //                 isLoaded: true,
-        //                 accommodation: dataById,
-        //                 error: 'tout ok',
-        //             });
-        //         } else if (!data.some(elt => elt.id === idParam)) {
-        //             this.setState({
-        //                 error: 'error',
-        //             });
-        //         }
-        //     })
-        //     .catch(error => {
-        //         this.setState({ error });
-        //     });
     }
-
-    // Timer = () =>
-    //     setTimeout(() => {
-    //         this.isMounted && this.setState({ error: true });
-    //     }, 5000);
-
-    // componentWillUnmount() {
-    //     this._isMounted = false;
-    //     clearTimeout();
-    // }
 
     render() {
         console.log(this.props);
         console.log(this.state);
+        console.log(this.props.accommodations);
         const {
             title,
             location,
@@ -116,21 +69,12 @@ class AccommodationSheet extends Component {
         } = this.state.accommodation;
         console.log(this.state.accommodation);
 
-        const { isLoaded, error, Redirect } = this.state;
+        const { isLoaded, error, notFound } = this.state;
 
-        // if (error) {
-        //     return <Error404 />;
-        //     // if (this.state.Redirect === true) {
-        //     //     return <Error404 />;
-        //     //     // return <Redirect to="/404" />;
-        //     // }
-        //     // return <Loader />;
-        if (!isLoaded) {
-            // if (error && Redirect) {
-            //     // return <Loader />;
-            //     return <Error404 />;
-            // }
+        if (!isLoaded || !this.props.accommodations.length) {
             return <Loader />;
+        } else if (notFound) {
+            return <Error404 />;
         } else {
             return (
                 <main className="Main-AccommodationSheet">
