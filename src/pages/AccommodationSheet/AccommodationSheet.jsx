@@ -61,9 +61,9 @@ class AccommodationSheet extends Component {
         } = this.state.accommodation;
 
         const { isLoaded, notFound, error } = this.state;
-        const isCharged = this.props.accommodations.length;
+        const isAllDataFetch = this.props.accommodations.length;
 
-        if ((!isLoaded && !error) || !isCharged) {
+        if ((!isLoaded && !error) || !isAllDataFetch) {
             return <Loader />;
         } else if (notFound || error) {
             return <Error404 />;
