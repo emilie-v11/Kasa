@@ -26,7 +26,11 @@ class Dropdown extends Component {
                     aria-expanded={this.state.isOpen ? 'true' : 'false'}
                 >
                     <h2 className="Dropdown-Heading">{title}</h2>
-                    <button className="Dropdown-Btn " onClick={this.toggle}>
+                    <button
+                        className="Dropdown-Btn "
+                        onClick={this.toggle}
+                        aria-label="Cliquez pour ouvrir et accéder au contenu"
+                    >
                         <Chevron
                             className={
                                 'Chevron ' + (this.state.isOpen ? 'Up' : 'Down')
